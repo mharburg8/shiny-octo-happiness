@@ -119,7 +119,7 @@ export default function ContactSection() {
               </CardContent>
             </Card>
             
-            <div className="bg-blue-50 rounded-lg p-6 border border-blue-100">
+            <div className="bg-blue-50 rounded-lg p-6 border border-blue-100 mb-6">
               <h4 className="font-semibold text-gray-900 mb-2">Trust & Transparency</h4>
               <p className="text-gray-600 text-sm mb-4">
                 We believe in building honest relationships. You'll get straightforward advice about whether our solution is right for you – even if that means recommending something else.
@@ -130,6 +130,22 @@ export default function ContactSection() {
                 </svg>
                 <span>Customer satisfaction is our top priority</span>
               </div>
+            </div>
+            
+            <div className="bg-red-50 rounded-lg p-6 border-2 border-red-200 shadow-lg relative overflow-hidden">
+              <div className="absolute -right-4 -top-4 bg-red-600 text-white text-xs font-bold py-1 px-3 rotate-12 transform shadow">
+                Call Now!
+              </div>
+              <h4 className="font-bold text-xl text-red-600 mb-3">TRY IT NOW!</h4>
+              <p className="text-gray-700 font-medium mb-4">
+                Experience our AI receptionist service immediately with just a phone call!
+              </p>
+              <a 
+                href="tel:+13134749199" 
+                className="block w-full py-3 bg-red-600 hover:bg-red-700 text-white text-center font-bold rounded-md text-lg transition-colors slow-pulse"
+              >
+                Call - 313-474-9199
+              </a>
             </div>
           </motion.div>
         </div>

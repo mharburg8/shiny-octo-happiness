@@ -62,6 +62,11 @@ export default function Header() {
                 Existing Customer Portal
               </a>
             </Button>
+            <Button asChild className="bg-red-600 hover:bg-red-700 shadow-lg transition-all duration-300 hover:shadow-red-500/20 slow-pulse">
+              <a href="tel:+13134749199">
+                TRY IT NOW! Call - 313-474-9199
+              </a>
+            </Button>
             <Button asChild className="bg-primary hover:bg-primary/90 shadow-lg transition-all duration-300 hover:shadow-primary/20">
               <a href="#contact">
                 Get Started Free
@@ -94,6 +99,11 @@ export default function Header() {
               <Button variant="outline" asChild className="w-full border-primary text-primary hover:bg-primary/10 mb-2">
                 <a href="https://voiceaiwrapper.com/login" target="_blank" rel="noopener noreferrer">
                   Existing Customer Portal
+                </a>
+              </Button>
+              <Button asChild className="w-full bg-red-600 hover:bg-red-700 mb-2 slow-pulse">
+                <a href="tel:+13134749199">
+                  TRY IT NOW! Call - 313-474-9199
                 </a>
               </Button>
               <Button asChild className="w-full">

@@ -138,6 +138,40 @@ html {
   }
 }
 
+/* Custom slow pulse animation */
+@keyframes slowPulse {
+  0% {
+    background-color: #dc2626; /* red-600 */
+  }
+  50% {
+    background-color: #fecaca; /* red-200 */
+  }
+  100% {
+    background-color: #dc2626; /* red-600 */
+  }
+}
+
+.slow-pulse {
+  animation: slowPulse 4s ease-in-out infinite;
+}
+
+/* Custom slow pulse animation */
+@keyframes slowPulse {
+  0% {
+    background-color: #dc2626; /* red-600 */
+  }
+  50% {
+    background-color: #ef4444; /* red-500 */
+  }
+  100% {
+    background-color: #dc2626; /* red-600 */
+  }
+}
+
+.slow-pulse {
+  animation: slowPulse 3s ease-in-out infinite;
+}
+
 .fade-in {
   opacity: 0;
   animation: fadeIn 0.5s ease-out forwards;
