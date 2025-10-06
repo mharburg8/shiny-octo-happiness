@@ -102,7 +102,7 @@ export default function PricingSection() {
     {
       title: "Core",
       icon: <Building className="h-5 w-5 text-primary" />,
-      price: "$799",
+      price: "$250",
       description: "For local trades & small businesses",
       callAllowance: "600 mins / 240 calls",
       overage: "$0.95",
@@ -121,7 +121,7 @@ export default function PricingSection() {
     {
       title: "Growth",
       icon: <Building2 className="h-5 w-5 text-primary" />,
-      price: "$1,495",
+      price: "$400",
       description: "Multi-location or high-volume SMBs",
       callAllowance: "1,500 mins / 750 calls",
       overage: "$0.85",
@@ -141,7 +141,7 @@ export default function PricingSection() {
     {
       title: "Healthcare HIPAA",
       icon: <Hospital className="h-5 w-5 text-primary" />,
-      price: "$2,950",
+      price: "$600",
       description: "Dental, clinics, med-spa practices",
       callAllowance: "2000 mins / 750 calls",
       overage: "$1.00",
