@@ -138,33 +138,16 @@ html {
   }
 }
 
-/* Custom slow pulse animation */
+/* Custom slow pulse animation for CTA buttons */
 @keyframes slowPulse {
   0% {
-    background-color: #dc2626; /* red-600 */
+    background-color: #f59e0b; /* amber-500 - eye-catching orange/yellow */
   }
   50% {
-    background-color: #fecaca; /* red-200 */
+    background-color: #fbbf24; /* amber-400 */
   }
   100% {
-    background-color: #dc2626; /* red-600 */
-  }
-}
-
-.slow-pulse {
-  animation: slowPulse 4s ease-in-out infinite;
-}
-
-/* Custom slow pulse animation */
-@keyframes slowPulse {
-  0% {
-    background-color: #dc2626; /* red-600 */
-  }
-  50% {
-    background-color: #ef4444; /* red-500 */
-  }
-  100% {
-    background-color: #dc2626; /* red-600 */
+    background-color: #f59e0b; /* amber-500 */
   }
 }
 

@@ -13,13 +13,13 @@ import {
 
 export default function ROICalculatorSection() {
   // Input defaults based on spec
-  const [monthlyInboundCalls, setMonthlyInboundCalls] = useState(40);
-  const [avgCallDuration, setAvgCallDuration] = useState(3.0);
-  const [missedCallRate, setMissedCallRate] = useState(25);
-  const [closeRate, setCloseRate] = useState(50);
-  const [revenuePerJob, setRevenuePerJob] = useState(200);
-  const [receptionistCost, setReceptionistCost] = useState(4100);
-  const [aiReceptionistCost, setAiReceptionistCost] = useState(1000);
+  const [monthlyInboundCalls, setMonthlyInboundCalls] = useState(400);
+  const [avgCallDuration, setAvgCallDuration] = useState(4);
+  const [missedCallRate, setMissedCallRate] = useState(20);
+  const [closeRate, setCloseRate] = useState(45);
+  const [revenuePerJob, setRevenuePerJob] = useState(175);
+  const [receptionistCost, setReceptionistCost] = useState(3800);
+  const [aiReceptionistCost, setAiReceptionistCost] = useState(2950);
 
   // Calculated results
   const [monthlySavings, setMonthlySavings] = useState(0);
@@ -31,27 +31,23 @@ export default function ROICalculatorSection() {
 
   // Recalculate when inputs change
   useEffect(() => {
-    // Direct cost savings (monthly)
-    const costSavings = receptionistCost - aiReceptionistCost;
+    // Calculate recovered calls and additional revenue
+    const recovered = Math.round(monthlyInboundCalls * (missedCallRate / 100));
+    const additionalRevenue = recovered * (closeRate / 100) * revenuePerJob;
     
-    // Recovered calls and revenue
-    const missedCalls = monthlyInboundCalls * (missedCallRate / 100);
-    const recovered = missedCalls; // Assume AI answers all previously missed calls
-    const newBookings = recovered * (closeRate / 100);
-    const additionalRevenue = newBookings * revenuePerJob;
+    // Calculate direct monthly savings
+    const directSavings = Math.max(receptionistCost - aiReceptionistCost, 0);
     
-    // Monthly total benefit
-    const monthlyBenefit = costSavings + additionalRevenue;
+    // Calculate total monthly benefit
+    const monthlyBenefit = directSavings + additionalRevenue;
     
-    // Annual savings
-    const annualBenefit = monthlyBenefit * 12;
+    // Calculate annual savings and ROI
+    const annualSavings = directSavings * 12;
+    const annualAICost = Math.max(aiReceptionistCost * 12, 1);
+    const returnOnInvestment = Math.round(((monthlyBenefit * 12) / annualAICost) * 100);
     
-    // ROI calculation (annual benefit / annual cost of AI)
-    const annualAICost = aiReceptionistCost * 12;
-    const returnOnInvestment = (annualBenefit / annualAICost) * 100;
-    
-    setMonthlySavings(costSavings);
-    setAnnualSavings(costSavings * 12);
+    setMonthlySavings(directSavings);
+    setAnnualSavings(annualSavings);
     setRecoveredCalls(recovered);
     setRecoveredRevenue(additionalRevenue);
     setTotalROI(monthlyBenefit);
@@ -59,11 +55,11 @@ export default function ROICalculatorSection() {
   }, [monthlyInboundCalls, avgCallDuration, missedCallRate, closeRate, revenuePerJob, receptionistCost, aiReceptionistCost]);
 
   return (
-    <section id="roi-calculator" className="py-20 bg-gray-50">
+    <section id="roi-calculator" className="py-20 bg-gradient-to-b from-blue-50 to-white">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Calculate Your <span className="text-primary">ROI</span>
+            Your Potential <span className="text-primary">ROI</span> (Solo Provider — Conservative Defaults)
           </h2>
           <p className="text-gray-600 text-lg">
             See how much your business could save and earn with our AI Receptionist solution
@@ -104,7 +100,7 @@ export default function ROICalculatorSection() {
                     id="monthly-calls"
                     type="number"
                     value={monthlyInboundCalls}
-                    onChange={(e) => setMonthlyInboundCalls(Number(e.target.value))}
+                    onChange={(e) => setMonthlyInboundCalls(Math.max(0, Math.floor(Number(e.target.value))))}
                     className="w-full"
                   />
                 </div>
@@ -133,7 +129,7 @@ export default function ROICalculatorSection() {
                     type="number"
                     step="0.1"
                     value={avgCallDuration}
-                    onChange={(e) => setAvgCallDuration(Number(e.target.value))}
+                    onChange={(e) => setAvgCallDuration(Math.max(0, Math.floor(Number(e.target.value))))}
                     className="w-full"
                   />
                 </div>
@@ -151,7 +147,7 @@ export default function ROICalculatorSection() {
                         </TooltipTrigger>
                         <TooltipContent>
                           <p className="w-64 text-sm">
-                            % of inbound calls you don't answer today. Studies show SMBs miss 37%-62% of calls.
+                            Percent of inbound calls you currently miss. 15–35% is typical; 20% is conservative.
                           </p>
                         </TooltipContent>
                       </Tooltip>
@@ -161,7 +157,7 @@ export default function ROICalculatorSection() {
                     id="missed-rate"
                     type="number"
                     value={missedCallRate}
-                    onChange={(e) => setMissedCallRate(Number(e.target.value))}
+                    onChange={(e) => setMissedCallRate(Math.min(100, Math.max(0, Number(e.target.value))))}
                     className="w-full"
                   />
                 </div>
@@ -179,7 +175,7 @@ export default function ROICalculatorSection() {
                         </TooltipTrigger>
                         <TooltipContent>
                           <p className="w-64 text-sm">
-                            Of answered calls, how many turn into a paying job or booked appointment? Average for local services is ~50%.
+                            Percent of answered calls that become booked appointments. We use 45% as a conservative default.
                           </p>
                         </TooltipContent>
                       </Tooltip>
@@ -189,7 +185,7 @@ export default function ROICalculatorSection() {
                     id="close-rate"
                     type="number"
                     value={closeRate}
-                    onChange={(e) => setCloseRate(Number(e.target.value))}
+                    onChange={(e) => setCloseRate(Math.min(100, Math.max(0, Number(e.target.value))))}
                     className="w-full"
                   />
                 </div>
@@ -207,7 +203,7 @@ export default function ROICalculatorSection() {
                         </TooltipTrigger>
                         <TooltipContent>
                           <p className="w-64 text-sm">
-                            Average revenue from one new customer / appointment
+                            Average revenue from a first visit or booked appointment. Conservative default: $175.
                           </p>
                         </TooltipContent>
                       </Tooltip>
@@ -217,7 +213,7 @@ export default function ROICalculatorSection() {
                     id="revenue-job"
                     type="number"
                     value={revenuePerJob}
-                    onChange={(e) => setRevenuePerJob(Number(e.target.value))}
+                    onChange={(e) => setRevenuePerJob(Math.max(0, Number(e.target.value)))}
                     className="w-full"
                   />
                 </div>
@@ -245,7 +241,7 @@ export default function ROICalculatorSection() {
                     id="receptionist-cost"
                     type="number"
                     value={receptionistCost}
-                    onChange={(e) => setReceptionistCost(Number(e.target.value))}
+                    onChange={(e) => setReceptionistCost(Math.max(0, Number(e.target.value)))}
                     className="w-full"
                   />
                 </div>
@@ -263,7 +259,7 @@ export default function ROICalculatorSection() {
                         </TooltipTrigger>
                         <TooltipContent>
                           <p className="w-64 text-sm">
-                            Your chosen AI plan
+                            HIPAA-ready AI receptionist with BAA.
                           </p>
                         </TooltipContent>
                       </Tooltip>
@@ -273,7 +269,7 @@ export default function ROICalculatorSection() {
                     id="ai-cost"
                     type="number"
                     value={aiReceptionistCost}
-                    onChange={(e) => setAiReceptionistCost(Number(e.target.value))}
+                    onChange={(e) => setAiReceptionistCost(Math.max(0, Number(e.target.value)))}
                     className="w-full"
                   />
                 </div>

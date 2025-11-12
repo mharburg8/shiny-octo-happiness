@@ -37,7 +37,11 @@ export default function Header() {
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Link to="/" className="flex items-center gap-2">
-            <span className="font-bold text-2xl text-primary">Harburg Automation</span>
+            <img 
+              src="/assets/harburg-logo.png" 
+              alt="Harburg Automation" 
+              className="h-10 w-auto"
+            />
           </Link>
         </div>
 
@@ -57,19 +61,14 @@ export default function Header() {
           </ul>
 
           <div className="flex items-center gap-3">
-            <Button variant="outline" asChild className="border-primary text-primary hover:bg-primary/10 transition-all duration-300">
-              <a href="https://voiceaiwrapper.com/login" target="_blank" rel="noopener noreferrer">
-                Existing Customer Portal
+            <Button asChild className="bg-gradient-to-r from-amber-400 to-amber-600 hover:from-amber-500 hover:to-amber-700 text-white shadow-lg transition-all duration-300 hover:shadow-amber-500/20">
+              <a href="https://cal.com/harburg-automation/30min?overlayCalendar=true" target="_blank" rel="noopener noreferrer">
+                Book Calendar
               </a>
             </Button>
-            <Button asChild className="bg-red-600 hover:bg-red-700 shadow-lg transition-all duration-300 hover:shadow-red-500/20 slow-pulse">
+            <Button asChild className="bg-amber-500 hover:bg-amber-600 shadow-lg transition-all duration-300 hover:shadow-amber-500/20 slow-pulse">
               <a href="tel:+13134749199">
                 TRY IT NOW! Call - 313-474-9199
-              </a>
-            </Button>
-            <Button asChild className="bg-primary hover:bg-primary/90 shadow-lg transition-all duration-300 hover:shadow-primary/20">
-              <a href="#contact">
-                Get Started Free
               </a>
             </Button>
           </div>
@@ -96,19 +95,14 @@ export default function Header() {
                   </li>
                 ))}
               </ul>
-              <Button variant="outline" asChild className="w-full border-primary text-primary hover:bg-primary/10 mb-2">
-                <a href="https://voiceaiwrapper.com/login" target="_blank" rel="noopener noreferrer">
-                  Existing Customer Portal
+              <Button asChild className="w-full bg-gradient-to-r from-amber-400 to-amber-600 hover:from-amber-500 hover:to-amber-700 text-white mb-2">
+                <a href="https://cal.com/harburg-automation/30min?overlayCalendar=true" target="_blank" rel="noopener noreferrer">
+                  Book Calendar
                 </a>
               </Button>
-              <Button asChild className="w-full bg-red-600 hover:bg-red-700 mb-2 slow-pulse">
+              <Button asChild className="w-full bg-amber-500 hover:bg-amber-600 mb-2 slow-pulse">
                 <a href="tel:+13134749199">
                   TRY IT NOW! Call - 313-474-9199
-                </a>
-              </Button>
-              <Button asChild className="w-full">
-                <a href="#contact">
-                  Get Started Free
                 </a>
               </Button>
             </nav>

@@ -44,59 +44,59 @@ export default function FeaturesSection() {
 
   const features = [
     {
-      icon: <Clock className="h-6 w-6 text-primary" />,
-      title: "24/7 Availability",
-      description: "Our AI receptionist never sleeps, takes breaks, or goes on vacation. Be available for your customers around the clock.",
+      icon: <Clock className="h-6 w-6 text-blue-600" />,
+      title: "Zero Missed Opportunities",
+      description: "Capture every single patient call 24/7. No more lost revenue from missed calls during lunch, after hours, or busy periods.",
     },
     {
-      icon: <Database className="h-6 w-6 text-primary" />,
-      title: "Custom AI Training",
-      description: "Trained on YOUR specific business data to provide accurate, personalized service that represents your brand perfectly.",
+      icon: <CheckCircle className="h-6 w-6 text-blue-600" />,
+      title: "Instant Patient Qualification",
+      description: "Pre-qualify patients based on insurance, urgency, and treatment needs before they even reach your staff.",
     },
     {
-      icon: <Phone className="h-6 w-6 text-primary" />,
-      title: "Intelligent Call Routing",
-      description: "Automatically routes calls to the right department or staff member and sends instant notifications.",
+      icon: <Calendar className="h-6 w-6 text-blue-600" />,
+      title: "Real-time Appointment Booking",
+      description: "Book appointments instantly while patients are on the phone. No callbacks needed, no lost opportunities.",
     },
     {
-      icon: <Calendar className="h-6 w-6 text-primary" />,
-      title: "Appointment Scheduling",
-      description: "Seamlessly books appointments based on your real-time availability, eliminating double-bookings.",
+      icon: <Shield className="h-6 w-6 text-blue-600" />,
+      title: "HIPAA-Compliant Security",
+      description: "Bank-level security ensures all patient information is protected and compliant with healthcare regulations.",
     },
     {
-      icon: <Shield className="h-6 w-6 text-primary" />,
-      title: "HIPAA Compliant",
-      description: "Purpose-built solutions for healthcare and dental practices with full regulatory compliance.",
+      icon: <Database className="h-6 w-6 text-blue-600" />,
+      title: "EHR/EMR Integration",
+      description: "Seamlessly connects with your existing patient management systems. No disruption to your current workflow.",
     },
     {
-      icon: <MessageSquare className="h-6 w-6 text-primary" />,
-      title: "Natural Conversations",
-      description: "Advanced AI that handles natural conversations, understands context, and provides helpful responses.",
+      icon: <Phone className="h-6 w-6 text-blue-600" />,
+      title: "Emergency Call Intelligence",
+      description: "Instantly identifies urgent cases and routes them appropriately while handling routine calls automatically.",
     },
     {
-      icon: <CheckCircle className="h-6 w-6 text-primary" />,
-      title: "Lead Qualification",
-      description: "Automatically qualifies leads and collects relevant information before transferring to your team.",
+      icon: <MessageSquare className="h-6 w-6 text-blue-600" />,
+      title: "Natural Patient Conversations",
+      description: "Patients can't tell they're talking to AI. Handles complex medical scheduling with human-like understanding.",
     },
     {
-      icon: <Users className="h-6 w-6 text-primary" />,
-      title: "CRM Integration",
-      description: "Seamlessly updates your CRM with call data, notes, and customer information in real-time.",
+      icon: <Users className="h-6 w-6 text-blue-600" />,
+      title: "Staff Productivity Boost",
+      description: "Free up your front desk staff to focus on in-person patients while AI handles all phone interactions.",
     },
     {
-      icon: <Globe className="h-6 w-6 text-primary" />,
-      title: "Multi-language Support",
-      description: "Communicate with customers in their preferred language, expanding your market reach.",
+      icon: <Globe className="h-6 w-6 text-blue-600" />,
+      title: "Multi-language Patient Support",
+      description: "Serve diverse patient populations in their preferred language, expanding your clinic's reach.",
     },
     {
-      icon: <Zap className="h-6 w-6 text-primary" />,
-      title: "System Integrations",
-      description: "Works with your existing tools and software, creating a unified workflow that saves time.",
+      icon: <Zap className="h-6 w-6 text-blue-600" />,
+      title: "Guaranteed Results Tracking",
+      description: "Real-time dashboard shows exactly how many new clients are being generated to ensure we hit our 40+ guarantee.",
     },
   ];
 
   return (
-    <section id="features" className="py-20">
+    <section id="features" className="py-20 bg-gradient-to-b from-blue-50 to-white">
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
@@ -105,9 +105,9 @@ export default function FeaturesSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Meet Your Perfect AI Receptionist</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Medical Clinics or Med Spas Doing Over $70K+ Per Month Choose Our SafetyNet System</h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            Our AI solution is designed specifically for small and medium businesses, offering enterprise-level features at an affordable price.
+            The only AI system specifically designed to guarantee 40 new clients in your first 60 days for established medical practices.
           </p>
         </motion.div>
 

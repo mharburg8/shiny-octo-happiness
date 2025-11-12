@@ -8,7 +8,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 z-0" />
       
       {/* Animated shapes */}
-      <div className="absolute inset-0 overflow-hidden z-0">
+      <div className="absolute inset-0 overflow-hidden z-0 bg-[#00000000] mt-[0px] mr-[0px] mb-[0px] ml-[0px] pt-[0px] pr-[0px] pb-[0px] pl-[0px] font-normal opacity-100 text-[#0F172A]">
         <div className="absolute top-1/4 -left-10 w-40 h-40 bg-blue-200 rounded-full opacity-20 blur-3xl" />
         <div className="absolute bottom-1/3 right-10 w-60 h-60 bg-purple-200 rounded-full opacity-20 blur-3xl" />
         <div className="absolute top-2/3 left-1/4 w-36 h-36 bg-green-200 rounded-full opacity-20 blur-3xl" />
@@ -22,26 +22,32 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent mb-6">
-                Your AI Receptionist That Never Sleeps
+              
+              <h1 className="text-4xl md:text-5xl lg:text-6xl tracking-tight from-blue-600 to-blue-800 bg-clip-text bg-[#00000000] mt-[0px] mr-[0px] mb-[24px] ml-[0px] pt-[0px] pr-[0px] pb-[0px] pl-[0px] font-bold opacity-100 text-[#000000FF]">
+                250+ New Clients Guaranteed
               </h1>
-              <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-lg">
-                Transform your business with an AI assistant that answers calls 24/7, schedules appointments, and ensures you never miss another customer again.
+              <p className="text-lg md:text-xl text-gray-600 mb-6 max-w-lg">
+                We Guarantee You <strong>250+ New Appointments Every Month Within 60 Days</strong>, Through Our AI Voice Agent SafetyNet System
               </p>
+              <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
+                <p className="text-lg font-bold text-gray-800">
+                  Or you don't pay.
+                </p>
+              </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild size="lg" className="bg-primary hover:bg-primary/90 shadow-lg hover:shadow-primary/20 text-white transition-all duration-300">
+                <Button asChild size="lg" className="bg-amber-500 hover:bg-amber-600 shadow-lg hover:shadow-amber/20 text-white transition-all duration-300 slow-pulse">
                   <a href="#contact">
-                    Schedule Free Consultation
+                    Schedule a Call - Show Me How
                   </a>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="border-primary text-primary hover:bg-primary/10">
-                  <a href="#features">
-                    Explore Features
+                  <a href="#pricing">
+                    See The Guarantee Details
                   </a>
                 </Button>
               </div>
               <p className="text-sm text-gray-500 mt-4">
-                Trusted by small businesses, healthcare providers, and dental practices across the country
+                This is ONLY if you're a Medical Clinic above $70k/month
               </p>
             </motion.div>
           </div>
@@ -101,3 +107,8 @@ export default function HeroSection() {
     </section>
   );
 }
+
+
+
+
+
