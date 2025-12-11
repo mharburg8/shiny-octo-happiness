@@ -61,7 +61,7 @@ export default function ContactSection() {
               
               <div className="border-t pt-6 mt-6">
                 <div className="text-center py-6">
-                  <p className="font-bold text-lg bg-blue-50 p-3 rounded-lg border-l-4 border-blue-400 mb-4">This call is ONLY for Medical Clinics above $70k/month ready to guarantee 40 new clients in 60 days.</p>
+                  <p className="font-bold text-lg bg-blue-50 p-3 rounded-lg border-l-4 border-blue-400 mb-4">This guarantee is only for medical clinics or med spas above $70k/month.</p>
                 </div>
               </div>
             </div>
